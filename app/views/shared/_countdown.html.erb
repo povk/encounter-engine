@@ -2,12 +2,12 @@
   jQuery.fn.countdown = function (date, settings) {
     var countdown_settings = {
       lang: {
-        years:   ['год', 'года', 'лет'],
-        months:  ['месяц', 'месяца', 'месяцев'],
-        days:    ['день', 'дня', 'дней'],
-        hours:   ['час', 'часа', 'часов'],
-        minutes: ['минута', 'минуты', 'минут'],
-        seconds: ['секунда', 'секунды', 'секунд'],
+        years:   ['metai', 'metų', 'metai'],
+        months:  ['mėnesis', 'mėnesių', 'mėnesiai'],
+        days:    ['diena', 'dienų', 'dienos'],
+        hours:   ['valanda', 'valandų', 'valandos'],
+        minutes: ['minutė', 'minučių', 'minutės'],
+        seconds: ['sekundė', 'sekundžių', 'sekundė'],
         plurar:  function(n) {
           return (n % 10 == 1 && n % 100 != 11 ? 0 : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2);
         }
