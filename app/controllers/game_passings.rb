@@ -87,7 +87,7 @@ protected
       @game_passing = GamePassing.create! :team => @team,
         :game => @game,
         :current_level => @game.levels.first
-    end
+    endpovk-patch-1
   end
 
   def find_team
@@ -95,19 +95,19 @@ protected
   end
 
   def ensure_game_is_started
-    raise Unauthorized, "Нельзя играть в игру до её начала. И вообще, где вы достали эту ссылку? :-)" unless @game.started? unless @game.is_testing?
+    raise Unauthorized, "Negalima žaisti žaidimo prieš jam prasidedant. Ir apskritai, iš kur gavote šią nuorodą?" unless @game.started? unless @game.is_testing?
   end
 
   def ensure_not_author_of_the_game
-    raise Unauthorized, "Нельзя играть в собственные игры, сорри :-)" if @game.created_by?(current_user) unless @game.is_testing?
+    raise Unauthorized, "Negalima žaisti savo kurtame žaidime, sorry." if @game.created_by?(current_user) unless @game.is_testing?
   end
 
   def author_finished_at
-    raise Unauthorized, "Игра была завершена автором, и вы не можете в нее больше играть" if @game.author_finished?
+    raise Unauthorized, "Autorius uždarė žaidimą, ir jūs nebegalite jo žaisti" if @game.author_finished?
   end
 
   def ensure_captain_exited
-    raise Unauthorized, "Команда сошла с дистанции" if @game_passing.exited?
+    raise Unauthorized, "Komanda pasitraukė iš žaidimo" if @game_passing.exited?
   end
 
   def ensure_not_finished
