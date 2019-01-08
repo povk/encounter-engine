@@ -1,58 +1,58 @@
 ## encounter-engine
 
-Свободный движок активных городских игр, бесплатная альтернатива проектам Encounter, Дозор и им подобным.
-С помощью этого движка любой активный человек может создать свой собсвтенный проект бесплатно.
+Laisvas aktyvių miesto žaidimų variklis, nemokama alternatyva „Encounter“, „Watch“ ir pan. Projektams. Naudodamas šį variklį, bet kuris aktyvus žmogus gali sukurti savo projektą nemokamai.
 
-### Как установить
+## Kaip įdiegti
+Parašykite laišką daniel.vartanov@gmail.com. Nurodykite savo projekto pavadinimą lotyniškai ir miesto laiko juostą. Aš atidarysiu jums nemokamą talpinimo sąskaitą, galite iš karto pradėti žaisti ant jo, jis visada bus nemokamas.
 
-Напишите мне письмо на [daniel.vartanov@gmail.com](daniel.vartanov@gmail.com). Укажите название вашего проекта на латиннице и часовой пояс города. Я открою вам аккаунт на бесплатном хостинге, на нём сразу можно будет начать играть, он всегда будет бесплатным.
+Arba galite pradėti žaisti bendrai naudojamame serveryje dabar. Užsiregistruokite, sukurkite žaidimą ir eikite į priekį. Tiesiog nebūkite nustebinti, bus ir kitų žaidimų.
 
-Или можно прямо сейчас начать играть на [общем сервере](http://encounter-engine-demo.herokuapp.com/). Регистрируйтесь, создавайте игру и вперёд. Только не удивляйтесь, там будут и другие игры.
-
-Или, если у вас есть собственный сервер и умение обращаться с Линуксом, то вот инструкции по установке: [http://github.com/DanielVartanov/encounter-engine/wiki/Инструкция-по-установке-на-Ubuntu](http://github.com/DanielVartanov/encounter-engine/wiki/Инструкция-по-установке-на-Ubuntu)
-
-### Что такое encounter-engine
-
-encounter-engine — это бесплатный софт с открытым кодом (open source) для проведения активных городских игр
-
-encounter-engine может быть свободно установлен любым человеком на любом сервере с любым доменным именем
-
-encounter-engine может быть свободно использоваться в любых целях, в том числе коммерческих
+Arba, jei turite savo serverį ir gebėjimą tvarkyti „Linux“, čia rasite diegimo instrukcijas: http://github.com/DanielVartanov/encounter-engine/wiki/Instruction-installation-on-Ubuntu
 
 
-### Чем НЕ является encounter-engine
+### Kas yra encounter-engine
 
-encounter-engine — это НЕ организация, проводящая активные городские игры
+encounter-engine yra nemokama atviro kodo programinė įranga atviriems miesto žaidimams.
 
-encounter-engine — это НЕ единичный сайт с доменным именем и хостингом
+encounter-engine gali būti laisvai įdiegtas bet kuriam asmeniui bet kuriame serveryje, kuriame yra bet kuris domeno vardas
 
-encounter-engine — это НЕ то, что установлено на en.cx и dzzz.ru
-
-Помнтие, что engine. cx — всего лишь софт. Всё зависит от того, как его использовать.
+encounter-engine gali būti laisvai naudojamas bet kokiam tikslui, įskaitant komercinius
 
 
-### Зачем был создан encounter-engine
+### Kas nėra encounter-engine
+
+encounter-engine nėra organizacija, vykdanti aktyvius miesto žaidimus
+
+encounter-engine nėra viena svetainė su domeno vardu ir priegloba
+
+encounter-engine nėra tai, kas įdiegta „en.cx“ ir „dzzz.ru“
+
+Atminkite, kad variklis. cx yra tik programinė įranga. Viskas priklauso nuo to, kaip jį naudoti.
+
+### Kodėl sukurtas encounter-engine
 
 Цель: получить "движок" с открытым кодом для сайтов активных городских игр, сходный с en.cx, с помощью которого любой человек может **бесплатно** создать подобный проект на собственом домене и со своими правилами.
 
 
 ### Приоритетные свойства
 
-Бесплатность.
+Tikslas: gauti „atviro kodo variklį“ aktyvių miesto žaidimų svetainėms, panašiai kaip „en.cx“, kurios pagalba kiekvienas gali sukurti panašų projektą nemokamai savo domene ir savo taisyklėmis.
 
-Минимальные усилия для технической поддержки.
+Prioritetinės savybės
 
-Открытый код (open source). Участники сообщества должны иметь возможность улучшать движок, исправлять баги и уязвимости даже если первоначальные авторы перестанут заниматься разработкой.
+Nemokama
 
-Устойчивость к взломам. Попытки взлома уже были, поэтому вопросу безопасности уделяется повышенное внимание. Здесь авторам особенно требуется помощь.
+Minimalios techninės pagalbos pastangos.
 
-Протестированность. Ошибки, глюки, "падения" сайта во время игры могут фатально сказываться на результатах. Автоматические и ручные тесты, учёт и обработка всех найденных багов — наш выбор.
+Atviras šaltinis (atvirasis šaltinis). Bendrijos nariai turėtų sugebėti tobulinti variklį, išspręsti klaidas ir pažeidžiamumą, net jei pradiniai autoriai nustoja tobulėti.
 
-Максимальная простота и удобство при работе с сайтом. Вбивать коды и смотреть статистику часто приходится в "боевой обстановке" с не очень удобными устройствами (наладонники, нетбуки с мелкой клавиатурой и т.д.), необходимо максимально упростить игрокам задачу ввода кодов.
+Atsparumas įsilaužimams. Jau buvo bandoma įsilaužti į kompiuterį, taigi saugumo klausimas skiriamas daugiau dėmesio. Čia autoriams ypač reikia pagalbos.
 
-Корректная работа с мобильными устройствами.
+Išbandyta Klaidos, trikdžiai, svetainės „kritimas“ žaidimo metu gali mirtinai paveikti rezultatus. Automatinis ir rankinis testavimas, visų rastų klaidų apskaita ir apdorojimas - mūsų pasirinkimas.
 
+Maksimalus paprastumas ir patogumas dirbant su svetaine. Vairavimo kodai ir statistikos stebėjimas dažnai būna „kovoti“ su ne taip patogiais prietaisais (nešiojamais kompiuteriais, netbookais su maža klaviatūra ir tt), jums reikia supaprastinti kodų įvedimą į žaidėjus.
 
-### Важно
+Teisingas darbas su mobiliaisiais įrenginiais.
 
-Все, кто прямо или косвенно участвует в разработке, делают это на добровольных началах и ни сейчас, ни в будущем не требуют никакой оплаты за проделанную работу. Вместе с тем, никто не берёт на себя обязательств пожизненно продолжать разработку и поддержку. Только достаточно большое количество людей в сообществе могут быть гарантией продолжения нашего общего дела.
+### Svarbu
+Kiekvienas, kuris tiesiogiai ar netiesiogiai dalyvauja vystymosi procese, tai daro savanoriškai ir nereikalauja jokių mokėjimų už atliktą darbą ne dabar, nei ateityje. Tuo pačiu metu niekas neprisiima įsipareigojimo tęsti gyvenimą. Tik pakankamai didelis žmonių skaičius bendruomenėje gali būti mūsų bendros priežasties tęstinumo garantija.
