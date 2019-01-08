@@ -31,14 +31,9 @@ Atminkite, kad variklis. cx yra tik programinė įranga. Viskas priklauso nuo to
 
 ### Kodėl sukurtas encounter-engine
 
-Цель: получить "движок" с открытым кодом для сайтов активных городских игр, сходный с en.cx, с помощью которого любой человек может **бесплатно** создать подобный проект на собственом домене и со своими правилами.
+Tikslas: gauti „atviro kodo variklį“ aktyvių miesto žaidimų svetainėms, panašiai kaip „en.cx“, kurios pagalba kiekvienas gali sukurti panašų projektą **nemokamai** savo domene ir savo taisyklėmis.
 
-
-### Приоритетные свойства
-
-Tikslas: gauti „atviro kodo variklį“ aktyvių miesto žaidimų svetainėms, panašiai kaip „en.cx“, kurios pagalba kiekvienas gali sukurti panašų projektą nemokamai savo domene ir savo taisyklėmis.
-
-Prioritetinės savybės
+### Prioritetinės savybės
 
 Nemokama
 
@@ -55,4 +50,5 @@ Maksimalus paprastumas ir patogumas dirbant su svetaine. Vairavimo kodai ir stat
 Teisingas darbas su mobiliaisiais įrenginiais.
 
 ### Svarbu
+
 Kiekvienas, kuris tiesiogiai ar netiesiogiai dalyvauja vystymosi procese, tai daro savanoriškai ir nereikalauja jokių mokėjimų už atliktą darbą ne dabar, nei ateityje. Tuo pačiu metu niekas neprisiima įsipareigojimo tęsti gyvenimą. Tik pakankamai didelis žmonių skaičius bendruomenėje gali būti mūsų bendros priežasties tęstinumo garantija.
