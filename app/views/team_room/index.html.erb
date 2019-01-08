@@ -1,14 +1,14 @@
-Команда <%= @team.name %> <br />
+Komanda <%= @team.name %> <br />
 <br />
 
 <fieldset>
   <legend>
-    Состав
+    Sudėtis
   </legend>
 
   <% @team.members.each do |member| %>
     <p>
-      <%= member.nickname %> <%= "- капитан" if member.captain? %>
+      <%= member.nickname %> <%= "- kapitonas" if member.captain? %>
     </p>
   <% end %>
 
@@ -16,7 +16,7 @@
   <hr class="short-line" />
 
   <p>
-    <%= link_to "Пригласить участников", resource(:invitations, :new) if @current_user.captain? %>
+    <%= link_to "Pakviesti narių", resource(:invitations, :new) if @current_user.captain? %>
   </p>
 </fieldset>
 
