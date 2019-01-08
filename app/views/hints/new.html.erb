@@ -1,5 +1,5 @@
 <p>
-    Новое подсказка для задания "<%= link_to @level.name, resource(@game, @level) %>" игры "<%= link_to @game.name, resource(@game) %>"
+    Nauja užduoties užuomina"<%= link_to @level.name, resource(@game, @level) %>" игры "<%= link_to @game.name, resource(@game) %>"
 </p>
 
 <br />
@@ -10,7 +10,7 @@
 
   <%= partial 'form', :hint => @hint %>
 
-  <%= submit "Добавить подсказку", :style => "width:170px" %>
-  <em><%= link_to "(отменить)", resource(@hint.level.game, @hint.level) %></em>
+  <%= submit "Išsaugoti", :style => "width:170px" %>
+  <em><%= link_to "(atmesti)", resource(@hint.level.game, @hint.level) %></em>
 <% end =%>
 
