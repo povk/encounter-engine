@@ -3,9 +3,9 @@
 <table id="stats">
   <thead>
     <tr>
-      <th>Komanda</th>
-      <th>Lygis</th>
-      <th>Laikas</th>
+      <th>Команда</th>
+      <th>Уровень</th>
+      <th>Время на уровне</th>
       <th>#</th>
       <th>#</th>
     </tr>
@@ -26,10 +26,10 @@
       <tr>
         <td><%= game_passing.team.name %></td>
         <% if game_passing.exited? %>
-          <td>(Pasitraukė iš žaidimo)</td>
+          <td>(Сошли с дистанции)</td>
           <td><%= Level.find(game_passing.current_level_id).name %></td>
         <% elsif game_passing.finished? %>
-          <td>(baigė žaidimą)</td>
+          <td>(закончили игру)</td>
           <td>--:--:--</td>
         <% else %>
           <td><%= game_passing.current_level.name %></td>
@@ -40,9 +40,9 @@
           <em>
             <%=
                unless game_passing.finished?
-                 link_to "(lygio žurnalas)", "/logs/level/#{game_passing.game_id}/#{game_passing.team_id}"
+                 link_to "(лог по уровню)", "/logs/level/#{game_passing.game_id}/#{game_passing.team_id}"
                else
-                 "(lygio žurnalas)"
+                 "(лог по уровню)"
                end
             %>
           </em>
@@ -50,7 +50,7 @@
         
         <td>
           <em>
-            <%= link_to "(žaidimo žurnalas)", "/logs/game/#{game_passing.game_id}/#{game_passing.team_id}" %>
+            <%= link_to "(лог по игре)", "/logs/game/#{game_passing.game_id}/#{game_passing.team_id}" %>
           </em>
         </td>
         
@@ -61,4 +61,4 @@
 
 <br />
 
-<%= link_to "Visas atsakymų žurnalas", "/logs/full/#{@game.id}" %>
+<%= link_to "Полный лог ответов", "/logs/full/#{@game.id}" %>

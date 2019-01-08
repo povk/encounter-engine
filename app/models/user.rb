@@ -4,23 +4,23 @@ class User < ActiveRecord::Base
 
   has_many :created_games, :class_name => "Game", :foreign_key => "author_id"
 
-  validates_presence_of :email, :message => "Neįvedėte el. pašto adreso"
+  validates_presence_of :email, :message => "Не введён e-mail"
 
   validates_uniqueness_of :email,
-    :message => "Vartotojas su šiuo adresu, jau yra užregistruotas"
+    :message => "Пользователь с таким адресом уже зарегистрирован"
 
   validates_presence_of :nickname,
-    :message => "Neįvedėte vardo"
+    :message => "Вы не ввели имя"
 
   validates_uniqueness_of :nickname,
-    :message => "Toks vartotojas jau yra"
+    :message => "Пользователь с таким именем уже зарегистрирован"
 
   validates_length_of :password, :minimum => 4,
-    :message => "Slaptažodis per trumpas (mažiausiai 4 simboliai)",
+    :message => "Слишком короткий пароль (минимум 4 символа)",
     :if => :password_required?
 
   validates_confirmation_of :password,
-    :message => "Slaptažodis ir patvirtinimas nesutampa",
+    :message => "Пароль и его подтверждение не совпадают",
     :if => :password_required?
 
 

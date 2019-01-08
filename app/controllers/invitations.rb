@@ -17,7 +17,7 @@ class Invitations < Application
   def create
     if @invitation.save
       send_invitation_notification(@invitation)
-      redirect resource(:invitations, :new), :message => "Kvietimas išsiųstas naudotojui #{@invitation.recepient_nickname}"
+      redirect resource(:invitations, :new), :message => "Пользователю #{@invitation.recepient_nickname} выслано приглашение"
     else
       @all_users = User.all
       render :new
@@ -48,7 +48,7 @@ protected
     send_mail NotificationMailer, :invitation_notification,
       { :to => invitation.for_user.email,
         :from => "noreply@bien.kg",
-        :subject => "Jus kviečia prisijungti prie komandos #{invitation.to_team.name}" },
+        :subject => "Вас пригласили вступить в команду #{invitation.to_team.name}" },
       { :team => invitation.to_team }
   end
 
@@ -56,7 +56,7 @@ protected
     send_mail NotificationMailer, :reject_notification,
       { :to => invitation.to_team.captain.email,
         :from => "noreply@bien.kg",
-        :subject => "Naudotojas #{invitation.for_user.nickname} atmetė jūsų kvietimą" },
+        :subject => "Пользователь #{invitation.for_user.nickname} отказался от приглашения" },
       { :user => invitation.for_user }
   end
 
@@ -64,7 +64,7 @@ protected
     send_mail NotificationMailer, :accept_notification,
       { :to => invitation.to_team.captain.email,
         :from => "noreply@bien.kg",
-        :subject => "Naudotojas #{invitation.for_user.nickname} priėmė jūsų kvietimą" },
+        :subject => "Пользователь #{invitation.for_user.nickname} принял Ваше приглашение" },
       { :user => invitation.for_user }
   end
 
@@ -91,7 +91,7 @@ protected
 
   def ensure_recepient
     unless @current_user.id == @invitation.for_user.id
-      raise Unauthorized, "Šiam veiksmui atlikti turite būti kvietimo gavėjas."
+      raise Unauthorized, "Вы должны быть получателем приглашения чтобы выполнить это действие"
     end
   end
 end

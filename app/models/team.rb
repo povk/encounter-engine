@@ -5,10 +5,10 @@ class Team < ActiveRecord::Base
   belongs_to :captain, :class_name => "User"
 
   validates_uniqueness_of :name,
-    :message => "Komanda tokiu pavadinimu jau yra"
+    :message => "Команда с таким названием уже существует"
 
   validates_presence_of :name,
-    :message => "Komandos pavadinimas negali būti tuščias"
+    :message => "Название команды должно быть непустым"
 
   after_save :adopt_captain
 

@@ -1,6 +1,6 @@
 <fieldset>
   <legend>
-    Registracijos paraiškos:
+    Заявки на регистрацию:
   </legend>
 
   <p>
@@ -11,8 +11,8 @@
 %>
   <p>
     <strong><%= @team.name %> <%= @game.name %></strong>
-    <em><%= link_to "(patvirtinti)", "/game_entries/accept/#{entry.id}" %></em>
-    <em><%= link_to "(atmesti)", "/game_entries/reject/#{entry.id}" %></em>
+    <em><%= link_to "(принять)", "/game_entries/accept/#{entry.id}" %></em>
+    <em><%= link_to "(отказать)", "/game_entries/reject/#{entry.id}" %></em>
   </p>
 <% end %>
 </p>

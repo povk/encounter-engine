@@ -1,6 +1,6 @@
 <% if logged_in? %>
-  <%= link_to "Įrankinė", url(:dashboard), :class => "home-link" %>
+  <%= link_to "Личный кабинет", url(:dashboard), :class => "home-link" %>
 <% else %>
-  <%= link_to "Pagrindinis", url(:index_page), :class => "home-link" %>
+  <%= link_to "Главная", url(:index_page), :class => "home-link" %>
 <% end %>
 <%= Time.now.strftime("%Y-%m-%d %H:%M")%>

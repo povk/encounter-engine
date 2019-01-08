@@ -1,6 +1,6 @@
-<%= error_messages_for @team, :header => "<h2>Klaida</h2>" %>
+<%= error_messages_for @team, :header => "<h2>Ошибка</h2>" %>
 
 <%= form_for @team, :action => url(:teams) do %>
-  <p><%= text_field :name, :label => "Pavadinimas" %></p>
-  <%= submit "Sukurti komandą" %>
+  <p><%= text_field :name, :label => "Название" %></p>
+  <%= submit "Создать команду" %>
 <% end =%>

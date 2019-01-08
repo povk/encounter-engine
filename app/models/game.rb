@@ -7,16 +7,16 @@ class Game < ActiveRecord::Base
   has_many :game_passings, :class_name => "GamePassing"
 
   validates_presence_of :name,
-    :message => "Neįvedėte pavadinimo"
+    :message => "Вы не ввели название"
 
   validates_uniqueness_of :name,
-    :message => "Žaidimas su šiuo pavadinimu jau yra."
+    :message => "Игра с таким названием уже существует"
 
   validates_presence_of :description,
-    :message => "Jūs neįvedėte aprašymo."
+    :message => "Вы не ввели описание"
 
   validates_numericality_of :max_team_number, :greater_than => 0, :less_than => 10000,
-    :message => "Komandų gali būti nuo 1 iki 10 000"
+    :message => "Диапазон количества команд от 1 до 10000"
 
   validates_presence_of :author
 
@@ -96,26 +96,26 @@ protected
 
   def game_starts_in_the_future
     if self.author_finished_at.nil? and self.starts_at and self.starts_at < Time.now
-      self.errors.add(:starts_at, "Jūs pasirinkote datą iš praeities. Tai neįmanoma :-)")
+      self.errors.add(:starts_at, "Вы выбрали дату из прошлого. Так нельзя :-)")
     end
   end
 
   def valid_max_num
     if self.max_team_number
       if self.max_team_number < self.requested_teams_number
-        self.errors.add(:max_team_number, "Komandų, kurios užsiregistravo, skaičius viršija nurodytą skaičių")
+        self.errors.add(:max_team_number, "Количество команд, подавших заявку превышает заданное число")
       end
     end
   end
   def deadline_is_in_future
     if self.author_finished_at.nil? and self.registration_deadline and self.registration_deadline < Time.now
-        self.errors.add(:registration_deadline,"Jūs nurodėte registracijos terminą iš praeities, tai neįmanoma :-)")
+        self.errors.add(:registration_deadline,"Вы указали крайний срок регистрации из прошлого, так нельзя :-)")
     end
   end
   def deadline_is_before_game_start
     if self.registration_deadline and
         self.starts_at and self.registration_deadline > self.starts_at
-      self.errors.add(:registration_deadline,"Jūs nurodėte registracijos terminą, kuris baigiasi vėliau, nei žaidimo pradžia, tai neįmanoma :-)")
+      self.errors.add(:registration_deadline,"Вы указали крайний срок регистрации больше даты начала игры, так нельзя :-)")
     end
   end
 end

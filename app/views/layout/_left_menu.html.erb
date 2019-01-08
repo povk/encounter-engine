@@ -8,38 +8,38 @@
   </legend>
 
   <p>
-    <%= link_to "Įrankinė", url(:dashboard) %>
+    <%= link_to "Личный кабинет", url(:dashboard) %>
   </p>
 
   <p>
-    <%= link_to "Profilis", url(:users) %>
+    <%= link_to "Профиль", url(:users) %>
   </p>
 
   <p>
     <% if current_user.member_of_any_team? %>
-      <%= link_to "Komandos kambarys", url(:team_room) %>
+      <%= link_to "Комната команды", url(:team_room) %>
     <% else %>
-      <%= link_to "Sukurti komandą", resource(:teams, :new) %>
+      <%= link_to "Создать команду", resource(:teams, :new) %>
     <% end %>
   </p>
 
   <p>
-    <%= link_to "Visi žaidimai", resource(:games) %>
+    <%= link_to "Все игры домена", resource(:games) %>
   </p>
 
   <p>
-    <%= link_to "Atsijungti", url(:logout) %>
+    <%= link_to "Выйти", url(:logout) %>
   </p>
 <% else %>
   <legend>
-    &nbsp;Išeiti&nbsp;
+    &nbsp;Вход&nbsp;
   </legend>
 
   <p>
-    <%= link_to "Prisijungti", url(:login) %>
+    <%= link_to "Войти", url(:login) %>
   </p>
 
   <p>
-    <%= link_to "Užsiregistruoti", url(:signup) %> <br />
+    <%= link_to "Зарегистрироваться", url(:signup) %> <br />
   </p>
 <% end %>

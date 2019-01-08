@@ -1,15 +1,15 @@
 <h2>
-  Užduotis "<strong><%= @level.name %></strong>"
+  Задание "<strong><%= @level.name %></strong>"
 </h2>
 
 <p>
-  <em>(žaidimas "<%= link_to @game.name, resource(@game) %>")</em>
+  <em>(игра "<%= link_to @game.name, resource(@game) %>")</em>
 </p>
 
 <br />
 
 <p>
-  <em>Užduoties tekstas:</em>
+  <em>Текст задания:</em>
 </p>
 
 <p>
@@ -17,40 +17,40 @@
 </p>
 
 <p>
-  <%= link_to "Redaguoti užduoties tekstą", resource(@game, @level, :edit) unless @level.game.started? %>
+  <%= link_to "Редактировать текст и название задания", resource(@game, @level, :edit) unless @level.game.started? %>
 </p>
 
 <br />
 
 <% unless @level.multi_question? %>
   <p>
-    <em>Kodas:</em>
+    <em>Код:</em>
     <div id="question-<%= @level.questions.first.id %>">
       <%= @level.correct_answer %>
-      <%= link_to "(redaguoti)", resource(@game, @level, @level.questions.first, :answers) %>
+      <%= link_to "(редактировать)", resource(@game, @level, @level.questions.first, :answers) %>
     </div>
   </p>
 <% else %>
   <p>
-    <em>Kodai (<%= @level.questions.count %>):</em>
+    <em>Коды (<%= @level.questions.count %>):</em>
   </p>
   <% @level.questions.each do |question| %>
     <div id="question-<%=  question.id %>">
       <p><%= question.correct_answer %></p>
-      <%= link_to "(redaguoti)", resource(@game, @level, question, :answers) %>
+      <%= link_to "(редактировать)", resource(@game, @level, question, :answers) %>
     </div>
   <% end %>
 <% end %>
 
 <p>
-  <%= link_to "Pridėti dar vieną kodą", resource(@game, @level, :questions, :new) %>
+  <%= link_to "Добавить ещё один код", resource(@game, @level, :questions, :new) %>
 </p>
 
 <br />
 
 <fieldset>
   <legend>
-    Užuominos:
+    Подсказки:
   </legend>
 
   <p>
@@ -58,18 +58,18 @@
   </p>
 
   <p>
-    <%= link_to "Pridėti užuominą", resource(@game, @level, :hints, :new) %>
+    <%= link_to "Добавить подсказку", resource(@game, @level, :hints, :new) %>
   </p>
 </fieldset>
 
 <br />
 
 <p>
-  <%= link_to "Ištrinti šią užduotį", resource(@game, @level, :delete) %> <br />
+  <%= link_to "Удалить этот уровень", resource(@game, @level, :delete) %> <br />
 </p>
 
 <br />
 
 <p>
-  <%= link_to "Atgal į žaidimą \"#{@level.game.name}\"", resource(@level.game) %>
+  <%= link_to "Вернуться к игре \"#{@level.game.name}\"", resource(@level.game) %>
 </p>

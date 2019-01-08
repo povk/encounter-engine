@@ -2,7 +2,7 @@
 <script language="javascript" src="/javascripts/level_hint_updater.js"></script>
 
 <h2>
-  Žaidimas "<strong><%= @game.name %></strong>", Задание #<%= @game_passing.current_level.position %>
+  Игра "<strong><%= @game.name %></strong>", Задание #<%= @game_passing.current_level.position %>
 </h2>
 
 <br />
@@ -21,7 +21,7 @@
   <% @game_passing.hints_to_show.each_with_index do |hint, index| %>
     <fieldset>
       <legend>
-        Užuomina #<%= index + 1 %>
+        Подсказка #<%= index + 1 %>
       </legend>
       <%= hint.text %>
     </fieldset>
@@ -30,8 +30,8 @@
 </div>
 
 <% unless @game_passing.upcoming_hints.empty?  %>
-  <div id="LevelHintCountdownContainer">Iki kitos užuominos <span id="LevelHintCountdownTimerText">3 minutės</span></div>
-  <div id="LevelHintCountdownLoadIndicator" style="display: none;">Įkeliama...</div>
+  <div id="LevelHintCountdownContainer">До следующей подсказки <span id="LevelHintCountdownTimerText">3 минуты</span></div>
+  <div id="LevelHintCountdownLoadIndicator" style="display: none;">Загрузка...</div>
 
   <script>
   LevelHintUpdater.setup({
@@ -41,7 +41,7 @@
   </script>
 <% else %>
   <div>
-  Daugiau užuominų nėra
+  Подсказок больше не будет
   </div>
 <% end %>
 
@@ -50,32 +50,32 @@
 <% if answer_posted? %>
   <% if answer_was_correct? %>
     <div>
-      Коdas '<%= @answer %>' -- teisingas.
+      Код '<%= @answer %>' -- верный.
     </div>
   <% else %>
     <p>
-      Kodas neteisingas, jūs įvedėte '<%= @answer %>'.
+      Код неверный, вы ввели '<%= @answer %>'.
     </p>
   <% end %>
 <% end %>
 
 <% if @game_passing.current_level.multi_question? %>
   <div>
-    Įvesti teisingi kodai: <%= @game_passing.answered_questions.size %> из <%= @game_passing.current_level.questions.count %>
+    Правильных кодов введено: <%= @game_passing.answered_questions.size %> из <%= @game_passing.current_level.questions.count %>
   </div>
 <% end %>
 
 <%= form :action => url(:post_answer), :method => :post do %>
-  <p><%= text_field :name => 'answer', :label => "Kоdas" %></p>
-  <%= submit "Pateikti!" %>
+  <p><%= text_field :name => 'answer', :label => "Код" %></p>
+  <%= submit "Отправить!" %>
 <% end =%>
 
 <br/>
 
 <% if current_user.captain? %>
-    <%= link_to "Pasitraukti iš žaidimo", "/game_passings/exit_game/#{@game_passing.game_id}" %>
+    <%= link_to "Сойти с дистанции", "/game_passings/exit_game/#{@game_passing.game_id}" %>
 <% end %>
 <% if @game.is_testing? %>
   <br/>
-  <%= link_to "Užbaigti bandymus", url("games/finish_test/#{@game.id}") %>
+  <%= link_to "Завершить тестирование", url("games/finish_test/#{@game.id}") %>
 <% end %>

@@ -1,40 +1,40 @@
 <h2>
-  Žaidimas "<strong><%= @game.name %></strong>"
+  Игра "<strong><%= @game.name %></strong>"
 </h2>
 
 <% if @game.draft? %>
-  <div class="is-draft-message">Juodraštis</div>
+  <div class="is-draft-message">Черновик</div>
 <% end %>
 
 
 <p>
-  <em>Autorius</em> - <strong><%= @game.author.nickname %></strong>
+  <em>Автор</em> - <strong><%= @game.author.nickname %></strong>
 </p>
 
 <p>
   <% unless @game.starts_at.nil? %>
-    <em>Žaidimas prasideda: </em>: <%= @game.starts_at.strftime("%Y-%m-%d %H:%M") %>
+    <em>Начало игры</em>: <%= @game.starts_at.strftime("%Y-%m-%d %H:%M") %>
   <% else %>
-    Žaidimo pradžios data dar nenustatyta.
+    Дата начала игры ещё не назначена
   <% end %>
 </p>
 <p>
   <% unless @game.registration_deadline.nil? %>
-    <em>Registracijos terminas</em>: <%= @game.registration_deadline.strftime("%Y-%m-%d %H:%M") %>
+    <em>Крайний срок регистрации</em>: <%= @game.registration_deadline.strftime("%Y-%m-%d %H:%M") %>
   <% else %>
-    Registracijos terminas dar nenustatytas
+    Крайний срок регистрации ещё не назначен
   <% end %>
 </p>
 
 <p>
-  <em>Aprašymas:</em>
+  <em>Описание:</em>
 </p>
 
 <p>
   <%= @game.description %>
 </p>
 <p>
-  <em>Maksimalus komandų skaičius:</em>
+  <em>Максимальное количество команд:</em>
 </p>
 <p>
   <%= @game.max_team_number %>
@@ -46,7 +46,7 @@
 
   <fieldset>
     <legend>
-      Užduotis:
+      Задания:
     </legend>
 
     <p>
@@ -54,7 +54,7 @@
     </p>
 
     <p>
-      <%= link_to "Pridėti naują užduotį", resource(@game, :levels, :new) if ! @game.started? %>
+      <%= link_to "Добавить новое задание", resource(@game, :levels, :new) if ! @game.started? %>
     </p>
   </fieldset>
   <br/>
@@ -65,11 +65,11 @@
     <%= partial 'games/teams', :teams => @teams  %>
   <br />
   <p>
-    <%= link_to "Redaguoti šį žaidimą", resource(@game, :edit) if ! @game.started? %>
+    <%= link_to "Редактировать эту игру", resource(@game, :edit) if ! @game.started? %>
   </p>
 
   <p>
-    <%= link_to "Ištrinti šį žaidimą", resource(@game, :delete) %> <br />
+    <%= link_to "Удалить эту игру", resource(@game, :delete) %> <br />
   </p>
 
 <% end %>
@@ -84,7 +84,7 @@
   <% end %>
 
   $("#countdown-example").countdown(date,{
-    prefix:'Iki žaidimo liko: '
+    prefix:'До начала осталось: '
   });
 </script>
 
@@ -92,11 +92,11 @@
 <%= partial 'teams', :teams => @teams if (!logged_in?) || (logged_in? && !@current_user.author_of?(@game)) %>
 
 <% if @game.draft? and !@game.started? and @game.levels and @game.levels.count > 0 %>
-   <%= link_to 'Pradėti testavimą', url("games/start_test/#{@game.id}") %>
+   <%= link_to 'Начать тестирование', url("games/start_test/#{@game.id}") %>
 <% end %>
 
 <% if @game.is_testing? %>
-   <%= link_to "Pradėti", url(:show_current_level, :game_id => @game.id) %>
+   <%= link_to "Старт", url(:show_current_level, :game_id => @game.id) %>
    <br />
-   <%= link_to "Baigti testavimą", url("games/finish_test/#{@game.id}") %>
+   <%= link_to "Завершить тестирование", url("games/finish_test/#{@game.id}") %>
 <% end %>

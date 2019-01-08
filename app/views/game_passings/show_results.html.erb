@@ -1,11 +1,11 @@
-Sveikiname, baigėte žaidimą!
+Поздравляем, вы закончили игру!
 
 <table id="results">
   <thead>
     <tr>
-      <th>Vieta</th>
-      <th>Komandа</th>
-      <th>FInišo laikas</th>
+      <th>Место</th>
+      <th>Команда</th>
+      <th>Время финиша</th>
     </tr>
   </thead>
   <tbody>
@@ -16,7 +16,7 @@ Sveikiname, baigėte žaidimą!
         <td><%= game_passing.team.name %></td>
         <td>
           <% if game_passing.exited? %>
-            <b>Pasitraukė iš žaidimo</b>(<%= game_passing.finished_at.strftime('%H:%M:%S') %><%= ' ' + game_passing.finished_at.strftime('(%d.%m)') if game_passing.finished_at.day != @game.starts_at.day %>)
+            <b>Сошли с дистанции</b>(<%= game_passing.finished_at.strftime('%H:%M:%S') %><%= ' ' + game_passing.finished_at.strftime('(%d.%m)') if game_passing.finished_at.day != @game.starts_at.day %>)
           <% else %>
             <%= game_passing.finished_at.strftime('%H:%M:%S') %> <%= game_passing.finished_at.strftime('(%d.%m)') if game_passing.finished_at.day != @game.starts_at.day %>
           <% end %>
@@ -28,7 +28,7 @@ Sveikiname, baigėte žaidimą!
           <td>#</td>
           <td><%= game_passing.team.name %></td>
           <td>
-            Nebaigė žaidimo
+            Не финишировали
           </td>
         </tr>
       <% end %>

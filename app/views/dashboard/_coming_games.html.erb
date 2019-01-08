@@ -1,17 +1,17 @@
 <fieldset id="coming">
   <legend>
-    Artimiausi žaidimai (<%= Game.notstarted.count  %>)
+    Предстоящие игры (<%= Game.notstarted.count  %>)
   </legend>
   <% Game.notstarted.each do |game | %>
-    Žaidimas <b><%= link_to game.name, resource(game) %></b> |
+    Предстоит игра <b><%= link_to game.name, resource(game) %></b> |
     <% if game.created_by?(current_user) %>
-      <b>Jūs esate autorius</b>
+      <b>Вы автор игры</b>
     <% else %>
       <% if @current_user.captain? %>
         <% @game_entry = GameEntry.of(@team,game)%>
         <%= partial 'shared/game_entry_controls', :game_entry => @game_entry,  :game => game, :team => @team %>
       <% end %>
-      <%= link_to "Prisijunkite!", resource(game) %>
+      <%= link_to "Войти!", resource(game) %>
     <% end %>
     <br/>
   <% end %>

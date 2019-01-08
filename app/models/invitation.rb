@@ -8,14 +8,14 @@ class Invitation < ActiveRecord::Base
   attr_accessor :recepient_nickname
 
   validates_presence_of :for_user,
-    :message => "Nėra tokio naudotojo."
+    :message => "Пользователя с таким именем не существует"
 
   validates_presence_of :recepient_nickname,
-    :message => "Neįvedėte naudotojo vardo"
+    :message => "Вы не ввели имени пользователя"
 
   validates_uniqueness_of :for_user_id,
     :scope => [:to_team_id],
-    :message => "Jau išsiuntėte kvietimą šiam naudotojui ir jis dar neatsakė"
+    :message => "Вы уже высылали этому пользователю приглашение и он ещё не ответил"
 
   validate :recepient_is_not_member_of_any_team
 
@@ -31,6 +31,6 @@ class Invitation < ActiveRecord::Base
   end
 
   def recepient_is_not_member_of_any_team
-    errors.add(:base, "Vartotojas jau yra vienos iš komandų narys.") if for_user and for_user.member_of_any_team?
+    errors.add(:base, "Пользователь уже является членом одной из команд") if for_user and for_user.member_of_any_team?
   end
 end

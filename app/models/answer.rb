@@ -6,11 +6,11 @@ class Answer < ActiveRecord::Base
   before_save :strip_spaces
   before_create :assign_level
 
-  validates_presence_of :value, :message => "Neįvedėte kodo"
+  validates_presence_of :value, :message => "Вы не ввели вариант кода"
 
   validates_uniqueness_of :value,
                           :scope => [:level_id],
-                          :message => "Šis kodas jau yra panaudotas užduotyje"
+                          :message => "Такой код уже есть в задании"
 
   scope :of_question, ->(question) { where(question_id: question.id) }
 

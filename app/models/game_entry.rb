@@ -4,10 +4,10 @@ class GameEntry < ActiveRecord::Base
   belongs_to :team
 
   validates_presence_of :game,
-    :message => "Jūs nepasirinkote žaidimo"
+    :message => "Вы не выбрали игру"
 
   validates_presence_of :team_id,
-    :message => "Nenurodėte komandos"
+    :message => "Вы не указали команду"
 
   scope :of_game, ->(game) { where(game_id: game.id) }
   scope :of_team, ->(team) { where(team_id: team.id) }

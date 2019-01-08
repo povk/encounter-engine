@@ -1,6 +1,6 @@
-<h1>Komandos "<%= @team.name %>" atsakymai lygyje "<%= @level.name %>", žaidimas "<%= @game.name %>"</h1>
+<h1>Лог ответов команды "<%= @team.name %>" по уровню "<%= @level.name %>" игры "<%= @game.name %>"</h1>
 
-<strong>Teisingas kodas: </strong>&nbsp;<%= @level.questions.first.correct_answer %>
+<strong>Верный код:</strong>&nbsp;<%= @level.questions.first.correct_answer %>
 <ul>
 <% @logs.each do |log| %>
   <li><%= log.time.strftime("%H:%M:%S") %>&nbsp;<%= log.answer %></li>

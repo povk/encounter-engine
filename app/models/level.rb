@@ -10,10 +10,10 @@ class Level < ActiveRecord::Base
   has_many :hints, -> { order('delay ASC') }
 
   validates_presence_of :name,
-    :message => "Neįvedėte užduoties pavadinimo"
+    :message => "Вы не ввели название задания"
 
   validates_presence_of :text,
-    :message => "Neįvedėte užduoties teksto"
+    :message => "Вы не ввели текст задания"
 
   validates_presence_of :game
 
