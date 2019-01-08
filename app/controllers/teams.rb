@@ -25,6 +25,6 @@ protected
   end
 
   def ensure_not_member_of_any_team
-    raise Unauthorized, "Вы уже являетесь членом команды" if current_user.member_of_any_team?
+    raise Unauthorized, "Jau esate komandos narys." if current_user.member_of_any_team?
   end
 end
