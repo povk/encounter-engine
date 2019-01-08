@@ -1,7 +1,7 @@
 <% @my_games = Game.by(current_user) %>
 <fieldset id="mygames">
   <legend>
-    Мои игры (<%= @my_games.count %>)
+    Mano žaidimasi (<%= @my_games.count %>)
   </legend>
 
   <p>
@@ -13,6 +13,6 @@
   <hr class="short-line" />
 
   <p>
-    <%= link_to "Создать игру >> ", resource(:games, :new) %>
+    <%= link_to "Kurti žaidimą >> ", resource(:games, :new) %>
   </p>
 </fieldset>
