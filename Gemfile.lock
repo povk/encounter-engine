@@ -119,7 +119,7 @@ GEM
     mime-types-data (3.2016.0521)
     mini_portile2 (2.1.0)
     minitest (5.9.0)
-    nokogiri (1.8.2)
+    nokogiri (1.8.5)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
     pg (0.18.4)
@@ -154,7 +154,7 @@ GEM
       thread_safe (~> 0.1)
     unicode_utils (1.4.0)
     webrat (0.7.3)
-      nokogiri (>= 1.8.2)
+      nokogiri (>= 1.8.5)
       rack (>= 2.0.6)
       rack-test (>= 0.5.3)
 
@@ -179,7 +179,7 @@ DEPENDENCIES
   merb-slices!
   merb_activerecord!
   merb_cucumber (= 0.6.1)
-  nokogiri (>= 1.8.2)
+  nokogiri (>= 1.8.5)
   pg
   pry
   pry-byebug
